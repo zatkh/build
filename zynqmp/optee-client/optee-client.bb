@@ -33,4 +33,6 @@ do_install() {
 	install -m 0644 ${EXPORT_DIR}/lib/libteec.so.1.0.0 ${D}${libdir}
 	install -d ${D}${sbindir}
 	install -m 0744 ${EXPORT_DIR}/sbin/tee-supplicant ${D}${sbindir}
+	install -m 0744 ${EXPORT_DIR}/sbin/ustar-sandbox ${D}${sbindir}
+
 }

@@ -15,9 +15,16 @@ define OPTEE_CLIENT_INSTALL_SUPPLICANT_SCRIPT
 		$(TARGET_DIR)/etc/init.d/S30optee
 endef
 
+define OPTEE_CLIENT_INSTALL_USTAR_SCRIPT
+	$(INSTALL) -m 0755 -D $(OPTEE_CLIENT_PKGDIR)/S31optee \
+		$(TARGET_DIR)/etc/init.d/S31optee
+endef
+
 define OPTEE_CLIENT_INSTALL_INIT_SYSV
 	$(OPTEE_CLIENT_INSTALL_SUPPLICANT_SCRIPT)
+	$(OPTEE_CLIENT_INSTALL_USTAR_SCRIPT)
 endef
+
 
 # User tee is used to run tee-supplicant because access to /dev/teepriv0 is
 # restricted to group tee.
